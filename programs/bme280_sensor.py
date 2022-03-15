@@ -8,10 +8,8 @@ bus = smbus2.SMBus(port)
 
 bme280.load_calibration_params(bus,address)
 
-read_all():
-    bme280_data = bme280.sample(bus,address)
-    humidity  = bme280_data.humidity
-    pressure  = bme280_data.pressure
-    ambient_temperature = bme280_data.temperature
-    print(humidity, pressure, ambient_temperature)
-    return (humidity, pressure, ambient_temperature)
+bme280_data = bme280.sample(bus,address)
+humidity  = bme280_data.humidity
+pressure  = bme280_data.pressure
+ambient_temperature = bme280_data.temperature
+print(humidity, pressure, ambient_temperature)
