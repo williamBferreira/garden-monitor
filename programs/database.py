@@ -68,7 +68,7 @@ class mysql_database:
         return response_data if success else None
 
     def __del__(self):
-        self.conn.close()
+        self.connection.close()
 
 class weather_database:
     def __init__(self):
