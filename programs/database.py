@@ -86,7 +86,8 @@ class weather_database:
     def is_none(self, val):
         return val if val != None else "NULL"
 
-    def insert(self, ambient_temperature, internal_temperature, external_temperature, air_pressure, humidity, soil_moisture, created = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")):
+    def insert(self, ambient_temperature, internal_temperature, external_temperature, air_pressure, humidity, soil_moisture):
+        created = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         params = ( ambient_temperature,
             internal_temperature,
             external_temperature,
