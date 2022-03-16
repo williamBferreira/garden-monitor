@@ -15,7 +15,7 @@ def gunzip_bytes(bytes_obj):
 
 class mysql_database:
     def __init__(self):
-        credentials_file = os.path.join(os.path.dirname(__file__), "credentials.mysql")
+        credentials_file = os.path.join(os.path.dirname(__file__), "../config/credentials.mysql")
         f = open(credentials_file, "r")
         credentials = json.load(f)
         f.close()
