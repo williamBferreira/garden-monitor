@@ -21,5 +21,5 @@ ambient_temperature = bme280_data.temperature
 print(humidity, pressure, ambient_temperature)
 
 print("Inserting...")
-db.insert(0, temperature, 0, pressure, humidity,0)
+db.insert(0, ambient_temperature, 0, pressure, humidity,0)
 print("done")
