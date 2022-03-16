@@ -32,7 +32,6 @@ class mysql_database:
         except:
             self.connection.rollback()
             raise
-        print("execute complete")
 
     def query(self, query):
         cursor = self.connection.cursor(MySQLdb.cursors.DictCursor)
@@ -97,4 +96,3 @@ class weather_database:
             created )
         print(self.insert_template % params)
         self.db.execute(self.insert_template, params)
-        print("insert complete")

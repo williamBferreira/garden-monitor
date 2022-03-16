@@ -13,13 +13,12 @@ address = 0x77 # Adafruit BME280 address. Other BME280s may be different
 bus = smbus2.SMBus(port)
 
 bme280.load_calibration_params(bus,address)
+while True:
+    bme280_data = bme280.sample(bus,address)
+    humidity  = bme280_data.humidity
+    pressure  = bme280_data.pressure
+    ambient_temperature = bme280_data.temperature
+    print(humidity, pressure, ambient_temperature)
+    db.insert(0, ambient_temperature, 0, pressure, humidity,0)
+    sleep(1800)
 
-bme280_data = bme280.sample(bus,address)
-humidity  = bme280_data.humidity
-pressure  = bme280_data.pressure
-ambient_temperature = bme280_data.temperature
-print(humidity, pressure, ambient_temperature)
-
-print("Inserting...")
-db.insert(0, ambient_temperature, 0, pressure, humidity,0)
-print("done")
