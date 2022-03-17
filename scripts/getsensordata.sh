@@ -6,4 +6,4 @@
 cd /usr/garden-monitor/
 git pull
 cd /usr/garden-monitor/programs/
-py  get_all_bme280_sensor_data.py
+python  get_all_bme280_sensor_data.py
