@@ -22,7 +22,7 @@ class mysql_database:
         for key, value in credentials.items(): #remove whitespace
             credentials[key] = value.strip()
 
-        self.connection = MySQLdb.connect(user=credentials["USERNAME"], password=credentials["PASSWORD"], database=credentials["DATABASE"])
+        self.connection = MySQLdb.connect(host=credentials["HOST"],user=credentials["USERNAME"], password=credentials["PASSWORD"], database=credentials["DATABASE"])
         self.cursor = self.connection.cursor()
 
     def execute(self, query, params = []):
